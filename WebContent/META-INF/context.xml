@@ -1,7 +1,7 @@
 
 <context path="Crud_Personajes_Rol">
 
-	<Resource name="BasesDeDatos/InfoConexion" auth="Container" type="javax.sql.DataSource"
+	<Resource name="ConfiguracionConexionBBDD" auth="Container" type="javax.sql.DataSource"
 		maxActive="15" maxIdle="3" maxWait="5000"
 		username="root" password="123456789"
 		driverClassName = "com.mysql.jdbc.Driver"

@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 public class ServletCorePrincipal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@Resource(name = "BasesDeDatos/InfoConexion")
+	@Resource(name = "ConfiguracionConexionBBDD")
 	private DataSource ConfiguracionConexion;
 
 	// "ModeloProductos" Sera la clase encargada de gestionar la base de datos.
