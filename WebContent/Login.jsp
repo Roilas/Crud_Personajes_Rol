@@ -14,11 +14,11 @@
     
     <tr>
       <td><label for="usuario">Usuario: </label></td>
-      <td><input type="text" name="Usuario" id="Usuario"></td>
+      <td><input type="text" name="UsuarioIntroducidoLogin" id="Usuario"></td>
     </tr>
     <tr>
       <td><label for="contra">Contraseña: </label></td>
-      <td><input type="text" name="Contra" id="Contra"></td>
+      <td><input type="text" name="ContraIntroducidaLogin" id="Contra"></td>
     </tr>
     
     <tr>

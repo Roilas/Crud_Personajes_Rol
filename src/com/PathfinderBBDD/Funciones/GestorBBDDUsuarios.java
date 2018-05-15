@@ -7,9 +7,8 @@ import java.sql.ResultSet;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
-public abstract class GestorBBDDUsuarios {
+public class GestorBBDDUsuarios {
 
-	@Resource(name = "BasesDeDatos/InfoConexion")
 	private DataSource ConfiguracionConexion;
 	
 
