@@ -1,6 +1,5 @@
 package com.PathfinderBBDD.Servlets;
 
-import com.PathfinderBBDD.Funciones.Calculadora;
 
 
 import com.PathfinderBBDD.Funciones.GestorBBDDUsuarios;
@@ -20,7 +19,7 @@ import javax.sql.DataSource;
 public class ServletCorePrincipal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@Resource(name = "ConfiguracionConexionBBDD")
+	@Resource(name = "a")
 	private DataSource ConfiguracionConexion;
 
 	// "ModeloProductos" Sera la clase encargada de gestionar la base de datos.
@@ -44,7 +43,6 @@ public class ServletCorePrincipal extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		Calculadora MiCalculadora = new Calculadora();
 
 		String elComando = request.getParameter("Instruccion");
 
@@ -58,8 +56,6 @@ public class ServletCorePrincipal extends HttpServlet {
 
 			case "Login":
 				System.out.println("Vamos a sumar 3 y 4");
-				int Resultado = MiCalculadora.Suma(3, 4);
-				System.out.println(Resultado);
 				HaciaPantallaLogin(request, response);
 				break;
 			case "VerificarUsuario":
