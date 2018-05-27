@@ -87,16 +87,32 @@ public class ServletCorePrincipal extends HttpServlet {
 	}
 
 	private void VerificarUsuarioEnBBDD(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		// En estos procesos conectamos con la base de datos para validar el Usuario y contraseña introducidos
+		// Si el usuario es valido, se devuelve el nombre en la variable "UsuarioDevuelto".
+		//Si no es valido UsuarioDevuelto valdra "null"
+		String UsuarioDevuelto;
 		String UsuarioIntroducido = request.getParameter("UsuarioIntroducidoLogin");
 		System.out.println("El usuario introducido es: " + UsuarioIntroducido);
 		String ContrasenaIntroducida = request.getParameter("ContraIntroducidaLogin");
 		System.out.println("La contraseña introducida es: " + ContrasenaIntroducida);
-		if (GestorUsuarios.VerificarUsuario(UsuarioIntroducido, ContrasenaIntroducida)) {
+		UsuarioDevuelto = GestorUsuarios.VerificarUsuario(UsuarioIntroducido, ContrasenaIntroducida);
+		System.out.print("El usuario que te devuelvo es:" + UsuarioDevuelto);
+		if (UsuarioDevuelto != null) {
+			
+			//Esto solo ocurre cuando el usuario es correcto. Se enviara el Usuario a "ServletGestorDatos"
+			
 			System.out.println("Usuario correcto, bienvenido");
+			
+			request.setAttribute("USUARIOCONECTADO", UsuarioDevuelto);
+			RequestDispatcher miDispatcher = request.getRequestDispatcher("ServletGestorDatos");
+			miDispatcher.forward(request, response);
+			
+			
 		} else {
 			System.out.println("Usuario NOOOOOO autorizado");
 
 		}
+	
 	}
 
 }

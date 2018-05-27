@@ -16,7 +16,7 @@ public class GestorBBDDUsuarios {
 		this.ConfiguracionConexion = ConfiguracionConexion;
 	}
 	
-	public Boolean VerificarUsuario(String UsuarioIntroducido, String ContraIntroducida) {
+	public String VerificarUsuario(String UsuarioIntroducido, String ContraIntroducida) {
 		Boolean UsuarioCorrecto = false;
 		try{
 			Connection miConexion = ConfiguracionConexion.getConnection();
@@ -41,6 +41,12 @@ public class GestorBBDDUsuarios {
 
 			System.out.println("Error al verificar Usuario " + e.getMessage());
 			}
-		return UsuarioCorrecto;
+		
+		if(UsuarioCorrecto == true) {
+			return UsuarioIntroducido;
+		}else {
+			return null;
+		}
+		
 	}
 }
