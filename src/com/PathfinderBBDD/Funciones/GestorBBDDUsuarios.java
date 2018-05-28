@@ -21,7 +21,7 @@ public class GestorBBDDUsuarios {
 		try{
 			Connection miConexion = ConfiguracionConexion.getConnection();
 			
-			String Comando = "SELECT * FROM CUENTAS_USUARIOS WHERE USUARIO = ? AND CONTRASEÑA = ?";
+			String Comando = "SELECT * FROM USUARIOS WHERE USUARIO = ? AND CONTRASEÑA = ?";
 			PreparedStatement miStatement = miConexion.prepareStatement(Comando);
 			miStatement.setString(1, UsuarioIntroducido);
 			miStatement.setString(2, ContraIntroducida);
